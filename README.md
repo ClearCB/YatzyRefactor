@@ -1,20 +1,7 @@
-Yatzy Refactoring Kata
-Kata about refactoring and TDD from the book The Coding Dojo Handbook, a practical guide to creating a space where good programmers can become great programmers by Emily Bache.
+# Yatzy Refactoring Kata
 
-This is the README.MD file published at https://github.com/emilybache/Yatzy-Refactoring-Kata.
+(Kata about refactoring and TDD from the book The Coding Dojo Handbook, a practical guide to creating a space where good programmers can become great programmers by Emily Bache.)
 
-All credit to Emily Bache.
-
-This Refactoring Kata was designed by Jon Jagger and is available in his Cyber-Dojo. See his blog post
-
-I have changed it a little, so that the rules more closely match the original game.
-
-The other language translations have been contributed by:
-
-Python: Emily Bache
-Ruby: Kim Persson and Lennart Fridén
-Javascript: Antti Tarvainen
-Kata: Yatzy rules
 The game of Yatzy is a simple dice game. Each player rolls five six-sided dice. They can re-roll some or all of the dice up to three times (including the original roll).
 
 For example, suppose a players rolls:
