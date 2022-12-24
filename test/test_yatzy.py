@@ -22,6 +22,18 @@ def test_yazty():
     assert 0 == Yatzy.yatzy([1,2,2,2,2,2,22])
     assert 50 == Yatzy.yatzy([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1])
 
+# Counting Numbers
+# The player scores the sum of the dice that has the same number which was selected
+@pytest.mark.test_countingNumbers
+def test_countingNumbers():
+
+    assert 1 == Yatzy.countingNumbers(1,[1,2,3,5,6])
+    assert 4 == Yatzy.countingNumbers(2,[2,2,1,1,5,6])
+    assert 9 == Yatzy.countingNumbers(3,[3,3,3,1,1])
+    assert 16 == Yatzy.countingNumbers(4,[4,4,4,4,6])
+    assert 25 == Yatzy.countingNumbers(5,[5,5,5,5,5,6,1,2])
+    assert 36 == Yatzy.countingNumbers(6,[6,6,6,6,6,6,2,4,1])
+
 
 # @pytest.fixture
 # def inyector():
