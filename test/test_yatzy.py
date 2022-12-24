@@ -12,6 +12,16 @@ def test_chance():
     assert 14 == Yatzy.chance([4, 5, 5])
     assert 9 == Yatzy.chance([4, 5])
 
+# Yatzy
+# The player scores 50 points if all the dice has the same value
+@pytest.mark.test_yatzy
+def test_yazty():
+
+    assert 0 == Yatzy.yatzy([1,2])
+    assert 50 == Yatzy.yatzy([2,2,2,2,2,2])
+    assert 0 == Yatzy.yatzy([1,2,2,2,2,2,22])
+    assert 50 == Yatzy.yatzy([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1])
+
 
 # @pytest.fixture
 # def inyector():
