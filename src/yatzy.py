@@ -1,13 +1,16 @@
 class Yatzy:
 
+    def __init__(self, d1, d2, d3, d4, _5):
+        self.dice = [0]*5
+        self.dice[0] = d1
+        self.dice[1] = d2
+        self.dice[2] = d3
+        self.dice[3] = d4
+        self.dice[4] = _5
+
     @staticmethod
-    def chance(d1, d2, d3, d4, d5):
-        total = 0
-        total += d1
-        total += d2
-        total += d3
-        total += d4
-        total += d5
+    def chance(diceList):
+        total = sum(diceList)
         return total
 
     @staticmethod
@@ -68,13 +71,7 @@ class Yatzy:
         return s
     
 
-    def __init__(self, d1, d2, d3, d4, _5):
-        self.dice = [0]*5
-        self.dice[0] = d1
-        self.dice[1] = d2
-        self.dice[2] = d3
-        self.dice[3] = d4
-        self.dice[4] = _5
+
     
     def fours(self):
         sum = 0
