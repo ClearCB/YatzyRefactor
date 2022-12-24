@@ -1,5 +1,73 @@
 class Yatzy:
 
+    @staticmethod
+    def chance(d1, d2, d3, d4, d5):
+        total = 0
+        total += d1
+        total += d2
+        total += d3
+        total += d4
+        total += d5
+        return total
+
+    @staticmethod
+    def yatzy(dice):
+        counts = [0]*(len(dice)+1)
+        for die in dice:
+            counts[die-1] += 1
+        for i in range(len(counts)):
+            if counts[i] == 5:
+                return 50
+        return 0
+    
+    @staticmethod
+    def ones( d1,  d2,  d3,  d4,  d5):
+        sum = 0
+        if (d1 == 1):
+            sum += 1
+        if (d2 == 1):
+            sum += 1
+        if (d3 == 1):
+            sum += 1
+        if (d4 == 1):
+            sum += 1
+        if (d5 == 1): 
+            sum += 1
+
+        return sum
+    
+
+    @staticmethod
+    def twos( d1,  d2,  d3,  d4,  d5):
+        sum = 0
+        if (d1 == 2):
+             sum += 2
+        if (d2 == 2):
+             sum += 2
+        if (d3 == 2):
+             sum += 2
+        if (d4 == 2):
+             sum += 2
+        if (d5 == 2):
+             sum += 2
+        return sum
+    
+    @staticmethod
+    def threes( d1,  d2,  d3,  d4,  d5):
+        s = 0
+        if (d1 == 3):
+             s += 3
+        if (d2 == 3):
+             s += 3
+        if (d3 == 3):
+             s += 3
+        if (d4 == 3):
+             s += 3
+        if (d5 == 3):
+             s += 3
+        return s
+    
+
     def __init__(self, d1, d2, d3, d4, _5):
         self.dice = [0]*5
         self.dice[0] = d1
@@ -7,30 +75,30 @@ class Yatzy:
         self.dice[2] = d3
         self.dice[3] = d4
         self.dice[4] = _5
+    
+    def fours(self):
+        sum = 0
+        for at in range(5):
+            if (self.dice[at] == 4): 
+                sum += 4
+        return sum
+    
 
-    @staticmethod
-    def chance(diceList):
-        total = sum(diceList)
-        return total
+    def fives(self):
+        s = 0
+        i = 0
+        for i in range(len(self.dice)): 
+            if (self.dice[i] == 5):
+                s = s + 5
+        return s
+    
 
-    @staticmethod
-    def yatzy(diceList):
-
-        valueRepeated = diceList.count(diceList[0])
-        numberOfDice = len(diceList)
-
-        if valueRepeated == numberOfDice:
-            return 50
-        else:
-            return 0
-
-    @staticmethod
-    def countingNumbers(numberChosen, diceList):
-
-        numberCount = diceList.count(numberChosen)
-        total = numberCount * numberCount
-        return total
-
+    def sixes(self):
+        sum = 0
+        for at in range(len(self.dice)): 
+            if (self.dice[at] == 6):
+                sum = sum + 6
+        return sum
     
     @staticmethod
     def score_pair( d1,  d2,  d3,  d4,  d5):
