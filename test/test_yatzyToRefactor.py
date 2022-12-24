@@ -1,4 +1,4 @@
-from src.yatzy import Yatzy
+from src.yatzyToRefactor import Yatzy
 import pytest
 
 # Chance

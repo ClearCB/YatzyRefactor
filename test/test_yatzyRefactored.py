@@ -1,4 +1,4 @@
-from src.yatzyRefactor import Yatzy
+from src.yatzyRefactored import Yatzy
 import pytest
 
 
