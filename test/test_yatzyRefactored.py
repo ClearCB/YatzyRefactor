@@ -1,4 +1,4 @@
-from src.yatzy import Yatzy
+from src.yatzyRefactored import Yatzy
 import pytest
 
 
@@ -36,10 +36,10 @@ def test_countingNumbers():
 
 # Pair
 # The player score the sum of the paired number
-@pytest.mark.test_scorePair
-def test_scorePair():
+# @pytest.mark.test_scorePair
+# def test_scorePair():
 
-    assert
+    # assert
 # @pytest.fixture
 # def inyector():
 #     # Es el setup de unittest o de JUnit
