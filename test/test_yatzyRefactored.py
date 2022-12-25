@@ -35,11 +35,32 @@ def test_countingNumbers():
     assert 36 == Yatzy.countingNumbers(6,[6,6,6,6,6,6,2,4,1])
 
 # Pair
-# The player score the sum of the paired number
-# @pytest.mark.test_scorePair
-# def test_scorePair():
+# The player score the sum of the highest paired number
+@pytest.mark.test_scorePair
+def test_scorePair():
 
-    # assert
+    assert 0 == Yatzy.highestPair([1])
+    assert 2 == Yatzy.highestPair([1,1,1])
+    assert 4 == Yatzy.highestPair([1,1,2,2,2,2])
+    assert 6 == Yatzy.highestPair([3,3,5,6,4,1,1])
+    assert 8 == Yatzy.highestPair([4,4,4,4,4])
+    assert 10 == Yatzy.highestPair([5,5,2,3,3,4,5,6,2,2])
+    assert 12 == Yatzy.highestPair([6,6,2,2,3,4,5,6,1])
+
+# Two pairs
+# The player score the sum of the two paired numbers
+@pytest.mark.test_scoreDoublePair
+def test_scoreDoublePair():
+
+    assert 0 == Yatzy.twoPair([1,1,1,2,3])
+    assert 6 == Yatzy.twoPair([1,1,4,2,2])
+    assert 10 == Yatzy.twoPair([2,2,3,3,5,1,6,4])
+    assert 8 == Yatzy.twoPair([3,3,1,1])
+    assert 14 == Yatzy.twoPair([1,2,3,3,4,4,5,6])
+    assert 18 == Yatzy.twoPair([1,2,3,4,4,5,5,6])
+    assert 16 == Yatzy.twoPair([6,6,2,2])
+    # assert 16 == Yatzy.twoPair([6,6,6,6])
+
 # @pytest.fixture
 # def inyector():
 #     # Es el setup de unittest o de JUnit

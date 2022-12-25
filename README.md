@@ -12,7 +12,7 @@ First, we will make a small description on how the game works and the we will st
 
 ## Yatzy
 
-Yatzy is a dice game which has similarities with the English game called poker dice.
+Yatzy is a dice game which has similarities with the English game called poker dice. There are a lot of different types of yatzy, so you may find an other type of score table, in which other categories are included.
 
 ## Basic information
 
