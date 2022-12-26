@@ -22,17 +22,71 @@ def test_yazty():
     assert 0 == Yatzy.yatzy([1,2,2,2,2])
     assert 50 == Yatzy.yatzy([1,1,1,1,1])
 
-# Counting Numbers
-# The player scores the sum of the dice that has the same number which was selected
-@pytest.mark.test_countingNumbers
-def test_countingNumbers():
+# # Counting Numbers
+# # The player scores the sum of the dice that has the same number which was selected
+# @pytest.mark.test_countingNumbers
+# def test_countingNumbers():
 
-    assert 1 == Yatzy.countingNumbers(1,[1,2,3,5,6])
-    assert 4 == Yatzy.countingNumbers(2,[2,2,1,1,5])
-    assert 9 == Yatzy.countingNumbers(3,[3,3,3,1,1])
-    assert 16 == Yatzy.countingNumbers(4,[4,4,4,4,6])
-    assert 25 == Yatzy.countingNumbers(5,[5,5,5,5,5])
-    assert 30 == Yatzy.countingNumbers(6,[6,6,6,6,6])
+#     assert 1 == Yatzy.countingNumbers(1,[1,2,3,5,6])
+#     assert 4 == Yatzy.countingNumbers(2,[2,2,1,1,5])
+#     assert 9 == Yatzy.countingNumbers(3,[3,3,3,1,1])
+#     assert 16 == Yatzy.countingNumbers(4,[4,4,4,4,6])
+#     assert 25 == Yatzy.countingNumbers(5,[5,5,5,5,5])
+#     assert 30 == Yatzy.countingNumbers(6,[6,6,6,6,6])
+
+# ones
+# The player scores the sum of total ones dice at the dice values
+@pytest.mark.test_ones
+def test_ones():
+
+    assert 1 == Yatzy.ones([1,2,3,4,5])
+    assert 0 == Yatzy.ones([6,2,3,4,5])
+    assert 5 == Yatzy.ones([1,1,1,1,1])
+
+# twos
+# The player scores the sum of total twos dice at the dice values
+@pytest.mark.test_twos
+def test_twos():
+
+    assert 2 == Yatzy.twos([1,2,3,4,5])
+    assert 0 == Yatzy.twos([1,6,3,4,5])
+    assert 10 == Yatzy.twos([2,2,2,2,2])
+
+# threes
+# The player scores the sum of total threes dice at the dice values
+@pytest.mark.test_threes
+def test_threes():
+
+    assert 3 == Yatzy.threes([1,2,3,4,5])
+    assert 0 == Yatzy.threes([1,2,6,4,5])
+    assert 15 == Yatzy.threes([3,3,3,3,3])
+
+# fours
+# The player scores the sum of total fours dice at the dice values
+@pytest.mark.test_fours
+def test_fours():
+
+    assert 4 == Yatzy.fours([1,2,3,4,5])
+    assert 0 == Yatzy.fours([1,2,3,6,5])
+    assert 20 == Yatzy.fours([4,4,4,4,4])
+
+# fives
+# The player scores the sum of total fives dice at the dice values
+@pytest.mark.test_fives
+def test_fives():
+
+    assert 5 == Yatzy.fives([1,2,3,4,5])
+    assert 0 == Yatzy.fives([1,2,3,4,6])
+    assert 25 == Yatzy.fives([5,5,5,5,5])
+
+# sixs
+# The player scores the sum of total sixs dice at the dice values
+@pytest.mark.test_sixs
+def test_sixs():
+
+    assert 6 == Yatzy.sixs([1,2,3,4,6])
+    assert 0 == Yatzy.sixs([1,2,3,4,1])
+    assert 30 == Yatzy.sixs([6,6,6,6,6])
 
 # Pair
 # The player score the sum of the highest paired number
@@ -68,12 +122,12 @@ def test_scoreDoublePair():
 def test_threeOfAKind():
 
     assert 0 == Yatzy.threeOfAKind([1,1,2,2,3])
-    assert 6 == Yatzy.threeOfAKind([1,1,1,1,2])
-    assert 10 == Yatzy.threeOfAKind([2,2,2,2,2])
-    assert 18 == Yatzy.threeOfAKind([3,3,3,6,3])
-    assert 18 == Yatzy.threeOfAKind([4,4,4,4,2])
-    assert 23 == Yatzy.threeOfAKind([5,5,5,5,3])
-    assert 30 == Yatzy.threeOfAKind([6,6,6,6,6])
+    assert 3 == Yatzy.threeOfAKind([1,1,1,1,2])
+    assert 6 == Yatzy.threeOfAKind([2,2,2,2,2])
+    assert 9 == Yatzy.threeOfAKind([3,3,3,6,3])
+    assert 12 == Yatzy.threeOfAKind([4,4,4,4,2])
+    assert 15 == Yatzy.threeOfAKind([5,5,5,5,3])
+    assert 18 == Yatzy.threeOfAKind([6,6,6,6,6])
 
 # Four of a kind
 # The player score the sum of the four dice that has the same values
@@ -81,38 +135,31 @@ def test_threeOfAKind():
 def test_fourOfAKind():
 
     assert 0 == Yatzy.fourOfAKind([1,1,1,2,2])
-    assert 6 == Yatzy.fourOfAKind([1,1,1,1,2])
-    assert 10 == Yatzy.fourOfAKind([2,2,2,2,2])
-    assert 18 == Yatzy.fourOfAKind([3,3,3,3,6])
-    assert 18 == Yatzy.fourOfAKind([4,4,4,4,2])
-    assert 23 == Yatzy.fourOfAKind([5,5,5,5,3])
-    assert 30 == Yatzy.fourOfAKind([6,6,6,6,6])
+    assert 4 == Yatzy.fourOfAKind([1,1,1,1,2])
+    assert 8 == Yatzy.fourOfAKind([2,2,2,2,2])
+    assert 12 == Yatzy.fourOfAKind([3,3,3,3,6])
+    assert 16 == Yatzy.fourOfAKind([4,4,4,4,2])
+    assert 20 == Yatzy.fourOfAKind([5,5,5,5,3])
+    assert 24 == Yatzy.fourOfAKind([6,6,6,6,6])
 
 # SmallStraight
-# The player scores the sum of the dice values if there is a straight at the dice (4 numbers in ascendent order)
+# The player scores 30 points if there is a straight at the dice (4 numbers in ascendent order)
 @pytest.mark.test_smallStraight
 def test_smallStraight():
 
-    assert 30 == Yatzy.smallStraight([1,2,3,4,5])
-    assert 30 == Yatzy.smallStraight([2,3,4,5,3])
-    assert 30 == Yatzy.smallStraight([5,3,2,4,3])
-    assert 30 == Yatzy.smallStraight([6,3,4,2,5])
-    assert 0 == Yatzy.smallStraight([1,1,2,3,5])
-    assert 0 == Yatzy.smallStraight([1,1,2,3,6])
+    assert 15 == Yatzy.smallStraight([1,2,3,4,5])
     assert 0 == Yatzy.smallStraight([6,5,4,2,1])
 
 # LargeStraight
-# The player scores the sum of the dice values if there is a straight at the dice (5 numbers in ascendent order)
+# The player scores 45 points if there is a straight at the dice (5 numbers in ascendent order)
 @pytest.mark.test_largeStraight
 def test_largeStraight():
 
-    assert 45 == Yatzy.largeStraight([1,2,3,4,5])
-    assert 45 == Yatzy.largeStraight([6,3,4,2,5])
-    assert 45 == Yatzy.largeStraight([6,5,4,2,1])
-    assert 0 == Yatzy.largeStraight([2,3,4,5,3])
-    assert 0 == Yatzy.largeStraight([1,1,2,3,5])
-    assert 0 == Yatzy.largeStraight([1,1,2,3,6])
+    assert 20 == Yatzy.largeStraight([6,3,4,2,5])
     assert 0 == Yatzy.largeStraight([5,3,2,4,3])
+
+# Full-House
+# The player scores 25 points 
 
 
 # @pytest.fixture

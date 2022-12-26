@@ -24,12 +24,36 @@ class Yatzy:
         else:
             return 0
 
-    @staticmethod
-    def countingNumbers(numberChosen, diceList):
+    # @staticmethod
+    # def countingNumbers(numberChosen, diceList):
 
-        numberCount = diceList.count(numberChosen)
-        total = numberChosen * numberCount
-        return total
+    #     numberCount = diceList.count(numberChosen)
+    #     total = numberChosen * numberCount
+    #     return total
+
+    @staticmethod
+    def ones(diceList):
+        return diceList.count(1) * 1
+
+    @staticmethod
+    def twos(diceList):
+        return diceList.count(2) * 2
+
+    @staticmethod
+    def threes(diceList):
+        return diceList.count(3) * 3
+
+    @staticmethod
+    def fours(diceList):
+        return diceList.count(4) * 4
+
+    @staticmethod
+    def fives(diceList):
+        return diceList.count(5) * 5
+
+    @staticmethod
+    def sixs(diceList):
+        return diceList.count(6) * 6
 
     @staticmethod
     def highestPair(diceList):
@@ -82,7 +106,7 @@ class Yatzy:
 
             if numCount >= 3:
 
-                return Yatzy.chance(diceList)
+                return num * 3
 
         return 0
 
@@ -95,44 +119,33 @@ class Yatzy:
 
             if numCount >= 4:
 
-                return Yatzy.chance(diceList)
+                return num * 4
 
         return 0
 
     @staticmethod
     def smallStraight(diceList):
 
-        diceListSorted = sorted(diceList)
-        straightNumbers = list(range(min(diceList),max(diceList)+1))
-
-        for num in range(1,7):
-
-            numCount = diceList.count(num)
-
-            if numCount != 1 and num in diceList:
-
-                diceListSorted.remove(num)
-    
-        if diceListSorted == straightNumbers:
-
-            return 30
-
-        return 0
-
-
-    @staticmethod
-    def largeStraight(diceList):
-
-        for num in diceList:
+        for num in range(1,6):
 
             numCount = diceList.count(num)
 
             if numCount != 1:
                 return 0
 
-        return 45
+        return 15
 
-    
+    @staticmethod
+    def largeStraight(diceList):
+
+        for num in range(2,7):
+
+            numCount = diceList.count(num)
+
+            if numCount != 1:
+                return 0
+
+        return 20
 
     @staticmethod
     def fullHouse( d1,  d2,  d3,  d4,  d5):
@@ -167,12 +180,4 @@ class Yatzy:
         else:
             return 0
 
-if __name__ == '__main__':
-
-    assert 15 == Yatzy.smallStraight([1,2,3,4,5])
-    assert 17 == Yatzy.smallStraight([2,3,4,5,3])
-    assert 17 == Yatzy.smallStraight([5,3,2,4,3])
-    assert 20 == Yatzy.smallStraight([6,3,4,2,5])
-    assert 0 == Yatzy.smallStraight([1,1,2,3,5])
-    assert 0 == Yatzy.smallStraight([1,1,2,3,6])
-    assert 0 == Yatzy.smallStraight([6,5,4,2,1])
+# if __name__ == '__main__':

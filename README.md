@@ -38,15 +38,14 @@ As we could see at the picture of the score table, there are two sections in the
 
 There is a lower section in which the rules change and the score method is similar to poker. There are different ways to score:
 
-* 1 pair:  the player score the sum of the number paired
+* 1 pair:  the player score the highest sum of the number paired
 * 2 pairs:  the player score the sum of the double paired number
-* Three of a kind: the player scores the sum of the values of all dice
-* Four of a kind: the player scores the sum of the values of all dice
-* Small straight: the player scores 30 if there is a smal straight (4 values in ascendant order, ex: 1,2,3,4)
-* Large straight: the player scores 45 if there is a smal straight (5 values in ascendant order, ex: 1,2,3,4,5)
+* Three of a kind: the player scores the sum of the values of all dice repeated
+* Four of a kind: the player scores the sum of the values of all dice dice repeated
+* Full-house: the player scores the sum of the values of all dice if there are 2 dice with the same value and other 3 with a differente value but also repeated (2,2,3,3,3)
+* Small straight: the player scores 30 if there is a smal straight (1,2,3,4,5)
+* Large straight: the player scores 20 if there is a large straight (2,3,4,5,6)
 * Yatzy: the player scores 50 points if there is 5 values repeated or adds a (x) at yatzy bonuses if already filled.
-
-* Yatzy bonuses: gives the player 100 point per (x) (max 3)
 
 There is also a category in which you can save your dive value sum in case you do not want to save it in any other category that is called "chance"
 
