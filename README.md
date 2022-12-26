@@ -40,10 +40,10 @@ There is a lower section in which the rules change and the score method is simil
 
 * 1 pair:  the player score the highest sum of the number paired
 * 2 pairs:  the player score the sum of the double paired number
-* Three of a kind: the player scores the sum of the values of all dice repeated
-* Four of a kind: the player scores the sum of the values of all dice dice repeated
+* Three of a kind: the player scores the sum of the values of all dice repeated 3 times
+* Four of a kind: the player scores the sum of the values of all dice dice repeated 4 times
 * Full-house: the player scores the sum of the values of all dice if there are 2 dice with the same value and other 3 with a differente value but also repeated (2,2,3,3,3)
-* Small straight: the player scores 30 if there is a smal straight (1,2,3,4,5)
+* Small straight: the player scores 30 if there is a small straight (1,2,3,4,5)
 * Large straight: the player scores 20 if there is a large straight (2,3,4,5,6)
 * Yatzy: the player scores 50 points if there is 5 values repeated or adds a (x) at yatzy bonuses if already filled.
 
