@@ -88,6 +88,19 @@ def test_fourOfAKind():
     assert 20 == Yatzy.fourOfAKind([4,4,4,4,5,5,5,5,3,3,3,3])
     assert 24 == Yatzy.fourOfAKind([6,6,6,6,6,6,6,2,2,2,2])
 
+# SmallStraight
+# The player scores 15 if there is a straight at the dice (4 numbers in ascendent order)
+@pytest.mark.test_smallStraight
+def test_smallStraight():
+
+    assert 15 == Yatzy.smallStraight([1,2,3,4,5])
+    assert 15 == Yatzy.smallStraight([2,3,4,5,3])
+    assert 15 == Yatzy.smallStraight([5,3,2,4,3])
+    assert 15 == Yatzy.smallStraight([6,3,4,2,5])
+    assert 0 == Yatzy.smallStraight([1,1,2,2,3,5])
+    assert 0 == Yatzy.smallStraight([1,1,2,3,6])
+    assert 0 == Yatzy.smallStraight([6,5,4,2])
+
 # @pytest.fixture
 # def inyector():
 #     # Es el setup de unittest o de JUnit
