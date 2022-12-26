@@ -82,7 +82,7 @@ class Yatzy:
 
             if numCount >= 3:
 
-                return num * 3
+                return Yatzy.chance(diceList)
 
         return 0
 
@@ -95,7 +95,7 @@ class Yatzy:
 
             if numCount >= 4:
 
-                return num * 4
+                return Yatzy.chance(diceList)
 
         return 0
 
@@ -115,22 +115,22 @@ class Yatzy:
     
         if diceListSorted == straightNumbers:
 
-            return Yatzy.chance(diceList)
+            return 30
 
         return 0
 
 
-    # @staticmethod
-    # def largeStraight(diceList):
+    @staticmethod
+    def largeStraight(diceList):
 
-    #     for num in diceList:
+        for num in diceList:
 
-    #         numCount = diceList.count(num)
+            numCount = diceList.count(num)
 
-    #         if numCount != 1:
-    #             return 0
+            if numCount != 1:
+                return 0
 
-    #     return Yatzy.chance(diceList)
+        return 45
 
     
 
