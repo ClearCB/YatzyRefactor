@@ -1,13 +1,5 @@
 class Yatzy:
 
-    def __init__(self, d1, d2, d3, d4, _5):
-        self.dice = [0]*5
-        self.dice[0] = d1
-        self.dice[1] = d2
-        self.dice[2] = d3
-        self.dice[3] = d4
-        self.dice[4] = _5
-
     @staticmethod
     def chance(diceList):
         total = sum(diceList)
@@ -62,6 +54,18 @@ class Yatzy:
 
             numCount = diceList.count(num)
             if numCount >= 2:
+
+                return num*2
+
+        return 0
+
+    @staticmethod
+    def pair(diceList):
+
+        for num in range(6,0,-1):
+
+            numCount = diceList.count(num)
+            if numCount == 2:
 
                 return num*2
 
@@ -148,36 +152,10 @@ class Yatzy:
         return 20
 
     @staticmethod
-    def fullHouse( d1,  d2,  d3,  d4,  d5):
-        tallies = []
-        _2 = False
-        i = 0
-        _2_at = 0
-        _3 = False
-        _3_at = 0
+    def fullHouse(diceList):
 
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-
-        for i in range(6):
-            if (tallies[i] == 2): 
-                _2 = True
-                _2_at = i+1
-            
-
-        for i in range(6):
-            if (tallies[i] == 3): 
-                _3 = True
-                _3_at = i+1
-            
-
-        if (_2 and _3):
-            return _2_at * 2 + _3_at * 3
+        if Yatzy.threeOfAKind(diceList) and Yatzy.pair(diceList): 
+            return Yatzy.threeOfAKind(diceList) + Yatzy.pair(diceList)
+        
         else:
             return 0
-
-# if __name__ == '__main__':

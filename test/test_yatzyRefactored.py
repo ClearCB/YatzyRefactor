@@ -22,6 +22,8 @@ def test_yazty():
     assert 0 == Yatzy.yatzy([1,2,2,2,2])
     assert 50 == Yatzy.yatzy([1,1,1,1,1])
 
+
+
 # # Counting Numbers
 # # The player scores the sum of the dice that has the same number which was selected
 # @pytest.mark.test_countingNumbers
@@ -33,6 +35,8 @@ def test_yazty():
 #     assert 16 == Yatzy.countingNumbers(4,[4,4,4,4,6])
 #     assert 25 == Yatzy.countingNumbers(5,[5,5,5,5,5])
 #     assert 30 == Yatzy.countingNumbers(6,[6,6,6,6,6])
+
+
 
 # ones
 # The player scores the sum of total ones dice at the dice values
@@ -88,7 +92,7 @@ def test_sixs():
     assert 0 == Yatzy.sixs([1,2,3,4,1])
     assert 30 == Yatzy.sixs([6,6,6,6,6])
 
-# Pair
+# Highest Pair
 # The player score the sum of the highest paired number
 @pytest.mark.test_scorePair
 def test_scorePair():
@@ -100,6 +104,14 @@ def test_scorePair():
     assert 8 == Yatzy.highestPair([4,4,4,4,4])
     assert 10 == Yatzy.highestPair([5,5,2,3,3])
     assert 12 == Yatzy.highestPair([6,6,5,6,5])
+
+# Paired number
+# The player scores the sum of the value repeated exactly 2 times
+@pytest.mark.test_pair
+def test_pair():
+
+    assert 0 == Yatzy.pair([1,1,1,2,3])
+    assert 2 == Yatzy.pair([1,1,5,2,3])
 
 # Two pairs
 # The player score the sum of the two paired numbers
@@ -114,7 +126,6 @@ def test_scoreDoublePair():
     assert 18 == Yatzy.twoPair([4,4,5,5,6])
     assert 16 == Yatzy.twoPair([6,6,2,2,6])
     assert 24 == Yatzy.twoPair([6,6,6,6,1])
-
 
 # Three of a kind
 # The player score the sum of the third dice that has the same value
@@ -143,7 +154,7 @@ def test_fourOfAKind():
     assert 24 == Yatzy.fourOfAKind([6,6,6,6,6])
 
 # SmallStraight
-# The player scores 30 points if there is a straight at the dice (4 numbers in ascendent order)
+# The player scores 15 points if there is a straight at the dice (4 numbers in ascendent order)
 @pytest.mark.test_smallStraight
 def test_smallStraight():
 
@@ -151,7 +162,7 @@ def test_smallStraight():
     assert 0 == Yatzy.smallStraight([6,5,4,2,1])
 
 # LargeStraight
-# The player scores 45 points if there is a straight at the dice (5 numbers in ascendent order)
+# The player scores 20 points if there is a straight at the dice (5 numbers in ascendent order)
 @pytest.mark.test_largeStraight
 def test_largeStraight():
 
@@ -159,19 +170,11 @@ def test_largeStraight():
     assert 0 == Yatzy.largeStraight([5,3,2,4,3])
 
 # Full-House
-# The player scores 25 points 
+# The player scores 25 points if there are 2 values of the same kind and the other 3 has teh same value but different the first
+@pytest.mark.test_fullHouse
+def test_fullHouse():
 
-
-# @pytest.fixture
-# def inyector():
-#     # Es el setup de unittest o de JUnit
-#     tirada = Yatzy(1, 2, 3, 4, 5)
-#     return tirada
-
-
-# def test_fours(inyector):
-#     # Es necesario un objeto ya creado
-#     valorEsperado = 4
-#     # No puedo testear con fixtures = inyeccion de dependencias
-#     # los metodos estaticos como chance()
-#     assert valorEsperado == inyector.fours()
+    assert 8 == Yatzy.fullHouse([1,1,2,2,2])
+    assert 28 == Yatzy.fullHouse([5,5,6,6,6])
+    assert 0 == Yatzy.fullHouse([1,1,2,2,3])
+    assert 0 == Yatzy.fullHouse([1,2,2,2,3])
