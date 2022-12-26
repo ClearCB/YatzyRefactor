@@ -28,7 +28,7 @@ class Yatzy:
     def countingNumbers(numberChosen, diceList):
 
         numberCount = diceList.count(numberChosen)
-        total = numberCount * numberCount
+        total = numberChosen * numberCount
         return total
 
     @staticmethod
@@ -100,37 +100,38 @@ class Yatzy:
         return 0
 
     @staticmethod
-    def smallStraight( d1,  d2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-        if (tallies[0] == 1 and
-            tallies[1] == 1 and
-            tallies[2] == 1 and
-            tallies[3] == 1 and
-            tallies[4] == 1):
-            return 15
-        return 0
-    
+    def smallStraight(diceList):
 
-    @staticmethod
-    def largeStraight( d1,  d2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[d1-1] += 1
-        tallies[d2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-        if (tallies[1] == 1 and
-            tallies[2] == 1 and
-            tallies[3] == 1 and
-            tallies[4] == 1
-            and tallies[5] == 1):
-            return 20
+        diceListSorted = sorted(diceList)
+        straightNumbers = list(range(min(diceList),max(diceList)+1))
+
+        for num in range(1,7):
+
+            numCount = diceList.count(num)
+
+            if numCount != 1 and num in diceList:
+
+                diceListSorted.remove(num)
+    
+        if diceListSorted == straightNumbers:
+
+            return Yatzy.chance(diceList)
+
         return 0
+
+
+    # @staticmethod
+    # def largeStraight(diceList):
+
+    #     for num in diceList:
+
+    #         numCount = diceList.count(num)
+
+    #         if numCount != 1:
+    #             return 0
+
+    #     return Yatzy.chance(diceList)
+
     
 
     @staticmethod
@@ -166,5 +167,12 @@ class Yatzy:
         else:
             return 0
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
 
+    assert 15 == Yatzy.smallStraight([1,2,3,4,5])
+    assert 17 == Yatzy.smallStraight([2,3,4,5,3])
+    assert 17 == Yatzy.smallStraight([5,3,2,4,3])
+    assert 20 == Yatzy.smallStraight([6,3,4,2,5])
+    assert 0 == Yatzy.smallStraight([1,1,2,3,5])
+    assert 0 == Yatzy.smallStraight([1,1,2,3,6])
+    assert 0 == Yatzy.smallStraight([6,5,4,2,1])
