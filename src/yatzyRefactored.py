@@ -76,16 +76,16 @@ class Yatzy:
 
 
     @staticmethod
-    def four_of_a_kind(diceList):
+    def fourOfAKind(diceList):
 
         for num in range(6,0,-1):
 
             numCount = diceList.count(num)
 
-            if num >= 4:
+            if numCount >= 4:
 
                 return num * 4
-                
+
         return 0
     
 

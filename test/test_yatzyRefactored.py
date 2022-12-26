@@ -61,6 +61,22 @@ def test_scoreDoublePair():
     assert 16 == Yatzy.twoPair([6,6,2,2])
     assert 24 == Yatzy.twoPair([6,6,6,6])
 
+
+# Three of a kind
+
+
+# Four of a kind
+# The player score the sum of the four dice
+@pytest.mark.test_fourOfAKind
+def test_fourOfAKind():
+
+    assert 4 == Yatzy.fourOfAKind([1,1,1,1,2])
+    assert 8 == Yatzy.fourOfAKind([2,2,2,2,2,2,2,3,4])
+    assert 12 == Yatzy.fourOfAKind([3,3,3,3,3,5,3,4,5,6,6,3])
+    assert 16 == Yatzy.fourOfAKind([4,4,4,4,2,2,3,3,4,2,2,2])
+    assert 20 == Yatzy.fourOfAKind([4,4,4,4,5,5,5,5,3,3,3,3])
+    assert 24 == Yatzy.fourOfAKind([6,6,6,6,6,6,6,2,2,2,2])
+
 # @pytest.fixture
 # def inyector():
 #     # Es el setup de unittest o de JUnit
