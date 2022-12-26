@@ -59,7 +59,7 @@ def test_scoreDoublePair():
     assert 14 == Yatzy.twoPair([1,2,3,3,4,4,5,6])
     assert 18 == Yatzy.twoPair([1,2,3,4,4,5,5,6])
     assert 16 == Yatzy.twoPair([6,6,2,2])
-    # assert 16 == Yatzy.twoPair([6,6,6,6])
+    assert 24 == Yatzy.twoPair([6,6,6,6])
 
 # @pytest.fixture
 # def inyector():

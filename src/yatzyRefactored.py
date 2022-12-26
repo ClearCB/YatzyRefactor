@@ -35,51 +35,57 @@ class Yatzy:
     @staticmethod
     def highestPair(diceList):
 
-        highPair = 0
-
-        for num in diceList:
+        for num in range(6,0,-1):
 
             numCount = diceList.count(num)
+            if numCount >= 2:
 
-            if numCount >= 2 and (num*2>highPair):
+                return num*2
 
-                highPair = num*2
-
-        return highPair
+        return 0
 
     @staticmethod
     def twoPair(diceList):
 
-        sumTwoPair = 0
-        pairedNumbers = 0
-        actualPaired = 0
+        numPaired = 0
+        total = 0
+        num = 6
 
-        for num in diceList:
+        while numPaired <= 2 and num >=1 :
 
             numCount = diceList.count(num)
 
-            if numCount >= 2 and actualPaired != num:
+            if numCount >= 4:
 
-                actualPaired = num
-                pairedNumbers += 1
-                sumTwoPair += (num*2)
+                total = num * 4
+                return total
 
-        if pairedNumbers == 2:
-            return sumTwoPair
+            if numCount >=2:
+
+                numPaired += 1
+                total += num*2
+
+            num -= 1
+
+        if numPaired == 2:
+
+            return total
         
-        return 0
+        else:
+            return 0
+
 
     @staticmethod
-    def four_of_a_kind( _1,  _2,  d3,  d4,  d5):
-        tallies = [0]*6
-        tallies[_1-1] += 1
-        tallies[_2-1] += 1
-        tallies[d3-1] += 1
-        tallies[d4-1] += 1
-        tallies[d5-1] += 1
-        for i in range(6):
-            if (tallies[i] >= 4):
-                return (i+1) * 4
+    def four_of_a_kind(diceList):
+
+        for num in range(6,0,-1):
+
+            numCount = diceList.count(num)
+
+            if num >= 4:
+
+                return num * 4
+                
         return 0
     
 
@@ -163,3 +169,6 @@ class Yatzy:
             return _2_at * 2 + _3_at * 3
         else:
             return 0
+
+# if __name__ == '__main__':
+
