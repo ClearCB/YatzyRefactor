@@ -63,13 +63,24 @@ def test_scoreDoublePair():
 
 
 # Three of a kind
+# The player score the sum of the third dice that has the same value
+@pytest.mark.test_threeOfAKind
+def test_threeOfAKind():
 
+    assert 0 == Yatzy.threeOfAKind([1,1,2,2,3,3,4,4,5,5,6,6])
+    assert 3 == Yatzy.threeOfAKind([1,1,1,1,2])
+    assert 6 == Yatzy.threeOfAKind([2,2,2,2,2,2,2,3,4])
+    assert 9 == Yatzy.threeOfAKind([3,3,3,3,3,5,3,4,5,6,6,3])
+    assert 12 == Yatzy.threeOfAKind([4,4,4,4,2,2,3,3,4,2,2,2])
+    assert 15 == Yatzy.threeOfAKind([4,4,4,4,5,5,5,5,3,3,3,3])
+    assert 18 == Yatzy.threeOfAKind([6,6,6,6,6,6,6,2,2,2,2])
 
 # Four of a kind
-# The player score the sum of the four dice
+# The player score the sum of the four dice that has the same values
 @pytest.mark.test_fourOfAKind
 def test_fourOfAKind():
 
+    assert 0 == Yatzy.fourOfAKind([1,1,1,2,2,2,3,3,3,4,4,4,5,5,5,6,6,6])
     assert 4 == Yatzy.fourOfAKind([1,1,1,1,2])
     assert 8 == Yatzy.fourOfAKind([2,2,2,2,2,2,2,3,4])
     assert 12 == Yatzy.fourOfAKind([3,3,3,3,3,5,3,4,5,6,6,3])
