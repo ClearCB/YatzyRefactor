@@ -25,27 +25,33 @@ class Yatzy:
 
     @staticmethod
     def ones(diceList):
-        return diceList.count(1) * 1
+        ONE = 1
+        return diceList.count(1) * ONE
 
     @staticmethod
     def twos(diceList):
-        return diceList.count(2) * 2
+        TWO = 2
+        return diceList.count(2) * TWO
 
     @staticmethod
     def threes(diceList):
-        return diceList.count(3) * 3
+        THREE = 3
+        return diceList.count(3) * THREE
 
     @staticmethod
     def fours(diceList):
-        return diceList.count(4) * 4
+        FOUR = 4
+        return diceList.count(4) * FOUR
 
     @staticmethod
     def fives(diceList):
-        return diceList.count(5) * 5
+        FIVE = 5
+        return diceList.count(5) * FIVE
 
     @staticmethod
     def sixs(diceList):
-        return diceList.count(6) * 6
+        SIX = 6
+        return diceList.count(6) * SIX
 
     @staticmethod
     def highestPair(diceList):
