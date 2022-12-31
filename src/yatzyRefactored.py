@@ -1,3 +1,8 @@
+'''
+This class allows a player to select the points that would get positioning the dice into the category they choose
+
+Each method is a category, so when selected, return the points that the player gets
+'''
 class Yatzy:
 
     @staticmethod
