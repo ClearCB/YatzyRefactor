@@ -1,3 +1,4 @@
+from src.categories import Categories
 '''
 This class allows a player to select the points that would get positioning the dice into the category they choose
 
@@ -14,9 +15,8 @@ class Yatzy:
     def yatzy(diceList):
 
         valueRepeated = diceList.count(diceList[0])
-        numberOfDice = len(diceList)
-
-        if valueRepeated == numberOfDice:
+        
+        if valueRepeated == len(diceList):
             return 50
         else:
             return 0
@@ -30,32 +30,32 @@ class Yatzy:
 
     @staticmethod
     def ones(diceList):
-        ONE = 1
+        ONE = Categories.ONE.value
         return diceList.count(1) * ONE
 
     @staticmethod
     def twos(diceList):
-        TWO = 2
+        TWO = Categories.TWO.value
         return diceList.count(2) * TWO
 
     @staticmethod
     def threes(diceList):
-        THREE = 3
+        THREE = Categories.THREE.value
         return diceList.count(3) * THREE
 
     @staticmethod
     def fours(diceList):
-        FOUR = 4
+        FOUR = Categories.FOUR.value
         return diceList.count(4) * FOUR
 
     @staticmethod
     def fives(diceList):
-        FIVE = 5
+        FIVE = Categories.FIVE.value
         return diceList.count(5) * FIVE
 
     @staticmethod
     def sixs(diceList):
-        SIX = 6
+        SIX = Categories.SIX.value
         return diceList.count(6) * SIX
 
     @staticmethod
